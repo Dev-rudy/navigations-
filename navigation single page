@@ -1,0 +1,129 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+<title>website project with navbat breadcrumbs and responsive structure </title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+<style type="text/css">
+*{box-sizing:border-box;margin:0px;padding:0px;margin-bottom:0;}
+body{background:black;}
+.navcontainer{background:gray;width:20vw;height:100vh;position:absolute;top:0;left:0;transition-duration:1s;text-align:center;overflow-X:auto;}
+
+.navcontainer>.navul>li{list-style-type:none;font-size:1.1em;}
+.navcontainer>.navul>li>a{text-decoration:none;color:white;}
+.navul>li{border-bottom:1px solid black;}
+.navul>li:last-child{border:none;}
+
+.navul>li>a:hover{background:purple;color:red;}
+.active{color:white;background:blue;}
+.navcont2{display:relative;overflow-X:hidden;text-align:center;margin-left:22%;position:absolute;padding-top:1px;background-color:silver;height:10%;width:76vw;transition-duration:1s;font-size:1.5em;z-index:5;}
+.navcont2>.navul1>li{border-left:1px solid black;list-style-type:none;color:white;display:inline;}
+.navcont2>.navul1>li>a{text-decoration:none;}
+.navcont2:after{content:"";display:block;clear:both;}
+
+.breadcrumbs{background:lightgreen;float:left;margin-left:22%;
+margin-top:10vh;width:76vw;text-align:center;font-size:1.1em;}
+.bccontainer>li:before{content:"》"; color:black;font-size:1.2em;}
+.bccontainer>li{list-style-type:none;display:inline;}
+
+
+.main{background:lightgreen;;position:relative; size:2;}
+.maincontainer{;position:absolute;margin-top:20vh;margin-left:22vw;width:76%;height:75vh;position:absolute;overflow-y:scroll;}
+.imge1{width:30vw;height:auto;border:2px solid yellow;opacity:1;}
+.imge2{width:30vw;height:auto;border:2px solid yellow;opacity:1;overflow:hidden;box-sizing:border-box;}
+.di{display:inline-block;margin-left:20px;}
+.par{color:white;}
+
+
+
+/*in completion the two
+ object on top would have
+  a total height of 20%*/
+  /*left 22% content width 76 %*/
+  .copyright{background:green;color:white;position:relative;margin-top:auto;bottom:0;}
+.foot{background:blue;color:yellow;position:absolute;bottom:0;left:0;width:76vw;margin-left:22%;height:5vh;font-size:1.2em;margin-top:auto;text-shadow:3px 3px 1px green;overflow:hidden;transition-duration:1s;}
+.brand>ul>li{list-style-type:none;color:none;text-decoration:underline double;text-align:center;font-size:0.7em;}
+.footercontent{display:inline;text-align:left;white-space:wrap;font-size:100%;}
+.foot:hover{height:40vh;}
+
+body{counter-reset:x;}
+p:before{counter-increment:x;
+ content:"paragraph" counter(x) ".";color:lightgreen;text-decoration:underline double;} /* CSS Counter*/
+ 
+ /* media query are not used as it is not created in mobile first layout*/ 
+</style>
+<body>
+
+<nav class="navcontainer">
+<ul class="navul">
+   <li style="background:blue;"><a href="#" class="active">home</a></li>
+   <li><a href="#">articles</a></li>
+   <li><a href="#">more</a></li>
+</ul>
+</nav>
+
+<nav class="navcont2">
+<ul class="navul1">
+   <li style="background:blue;"><a href="#" class="active">home</a></li>
+   <li><a href="#">articles</a></li>
+   <li><a href="#">more</a></li>
+</ul> 
+</nav>
+
+<div class="breadcrumbs">
+<ul class="bccontainer">
+   <li>gallery</li>
+   <li>articles</li>
+   <li>goodies</li>
+ </ul>  
+</div>
+
+<main class="main">
+<div class="maincontainer">
+<div class="di"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTubdSNEZZ4LYMxaRQBLYu934chhNHjiDebXw&usqp=CAU" class="imge1"></div>
+<div class="di"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAlhnMKj6TjAKsl00e5TNBotsLGzyGAZ5dEA&usqp=CAU"class="imge2"></div>
+<p class="par">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+Why do we use it?
+It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+Where does it come from?
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+
+</div>
+
+</main>
+
+
+
+
+
+
+
+<footer class="foot"><!-------/*footer */---->
+<div class="brand">
+<h3>Call to action here</h3><br>
+<p class="footercontent">lorem isum bla bla blah some details about my self and so on so forth</p>
+<ul class="ul">
+  <li>know more</li>
+  <li>follow us</li>
+  <li>contact</li>
+ </ul>
+ </div>
+ 
+ <div class="copyright">(c) copyright 2022</div>
+</footer>
+
+
+</body>
+<!--project signsture :rudy thorns --->
+
+</html>
+<!---it was not made ad for mobile first design 
+media queries are not implemented with this project--->
+
+<!----website ends here----->
+
+<!--before we end this i just wanted you to know that i am not using javascript with this one --->
